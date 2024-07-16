@@ -13,6 +13,7 @@ function solution(expression) {
         const numbers = tempExp.split(/[\+\-\*]/).map(Number);
         const operators = tempExp.match(/[\+\-\*]/g) || [];
 
+        // Apply operations based on priority
         priority.forEach((operator) => {
             while (operators.includes(operator)) {
                 const index = operators.indexOf(operator);
