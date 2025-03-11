@@ -2,25 +2,22 @@ import java.util.*;
 
 class Solution {
     public long solution(int n, int[] works) {
-        PriorityQueue<Integer> maxHeap = new PriorityQueue<>(Collections.reverseOrder());
+        PriorityQueue<Integer> pq = new PriorityQueue<>(Collections.reverseOrder());
         
-        for(int i: works){
-            maxHeap.add(i);
-        }
+        for(int i: works) pq.add(i);
         
-        while(!maxHeap.isEmpty() && n > 0){
-            int max = maxHeap.poll();
-            if(max > 0) {
+        while(!pq.isEmpty() && n > 0){
+            int max = pq.poll();
+            if(max > 0){
                 max--;
                 n--;
-                maxHeap.add(max);
+                pq.add(max);
             }
         }
         
         long answer = 0;
-        while(!maxHeap.isEmpty()) {
-            int max = maxHeap.poll();
-            answer += Math.pow(max, 2);
+        while(!pq.isEmpty()){
+            answer += Math.pow(pq.poll(), 2);
         }
         return answer;
     }
