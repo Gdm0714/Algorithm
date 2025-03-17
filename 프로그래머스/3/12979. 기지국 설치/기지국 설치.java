@@ -4,13 +4,13 @@ class Solution {
         int pos = 1;
         int idx = 0;
         
-        while (pos <= n) {
-            if (idx < stations.length && pos >= stations[idx] - w) {
+        while(pos <= n){
+            if(idx < stations.length && pos >= stations[idx] - w){
                 pos = stations[idx] + w + 1;
                 idx++;
-            } else {
+            }else{
                 answer++;
-                pos += w * 2 + 1;
+                pos = pos + (w * 2) + 1;
             }
         }
         
