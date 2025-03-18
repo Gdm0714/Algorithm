@@ -45,7 +45,6 @@ public class Main {
 
         q.add(new int[]{0, -1});
         int result = 0;
-        int cnt = 0;
 
 
         while (!q.isEmpty()) {
@@ -56,7 +55,6 @@ public class Main {
             visited[node] = true;
             if (piro == 0) result++;
 
-            if (node != 0) cnt++;
 
             for (int i[] : lists.get(node)) {
                 if (!visited[i[0]]) {
